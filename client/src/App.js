@@ -16,7 +16,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Gio is a bitch
+          Gio is a cunt
         </a>
       </header>
     </div>
