@@ -14,6 +14,10 @@ app.listen(port, () => {
   console.log("Express server is running on localhost:3001");
 });
 
+app.get("/test", (req, res) => {
+  res.send({ message: "yo" });
+});
+
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"), function(
     err

@@ -3,16 +3,21 @@ import logo from "./logo.svg";
 import "./App.css";
 
 function App() {
+  let [title, changetitle] = useState("NO TITLE YET");
+
   useEffect(() => {
     console.log("component did mount() ");
     fetch("/test", {
-      method: "POST",
+      method: "GET",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
-      },
-      body: JSON.stringify(this.state)
-    }).then(res => this.checkResponse(res));
+      }
+    }).then(async res => {
+      let goodRes = await res.json();
+      console.log(goodRes);
+      changetitle((title = goodRes.message));
+    });
   });
 
   return (
@@ -28,7 +33,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Gio is a cunt
+          {title}
         </a>
       </header>
     </div>
