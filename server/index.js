@@ -15,9 +15,9 @@ app.listen(port, () => {
 });
 
 app.get("/test", (req, res) => {
-  res.send({ message: "yo" });
+  res.body({ message: "yo" });
 });
-
+//random change
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "../client/build/index.html"), function(
     err
